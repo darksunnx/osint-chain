@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darksint Chain</title>
+  <link href="style.css" rel="stylesheet" />
+  <script src="https://unpkg.com/konva@9.0.1/konva.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <div class="sidebar">
+      <h2>Darksint Chain</h2>
+      <button onclick="addNode('Персона')">➕ Персона</button>
+      <button onclick="addNode('Организация')">➕ Организация</button>
+      <button onclick="addNode('Локация')">➕ Локация</button>
+      <button onclick="addNode('Устройство')">➕ Устройство</button>
+      <button onclick="addNode('Соцсеть')">➕ Соцсеть</button>
+      <button onclick="addNode('Файл')">➕ Файл</button>
+      <button onclick="addNode('Заметка')">➕ Заметка</button>
+      <hr/>
+      <button onclick="downloadProject()">💾 Сохранить</button>
+      <input type="file" onchange="loadProject(event)" />
+      <button onclick="exportAsImage()">📤 Экспорт PNG</button>
+    </div>
+    <div class="container">
+      <div id="stage-container"></div>
+    </div>
+  </div>
+
+  <div id="property-popup" class="property-popup hidden">
+    <h3>Свойства узла</h3>
+    <label>Название:</label>
+    <input type="text" id="node-title" />
+    <label>Тип:</label>
+    <select id="node-type">
+      <option>Персона</option>
+      <option>Организация</option>
+      <option>Локация</option>
+      <option>Устройство</option>
+      <option>Соцсеть</option>
+      <option>Файл</option>
+      <option>Заметка</option>
+    </select>
+    <button onclick="saveProperties()">✅ Сохранить</button>
+    <button onclick="closePropertyPopup()">✖ Закрыть</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
